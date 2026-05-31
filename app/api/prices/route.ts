@@ -1,4 +1,5 @@
 export async function GET() {
+  console.log("API KEY:", process.env.ALTIN_API_KEY);
   try {
     const response = await fetch(
       "https://altinapi.com/api/v1/prices",
