@@ -7,7 +7,7 @@ export default function CurrencyCards() {
   const [data, setData] = useState({
     dolar: 0,
     euro: 0,
-    ons: 0,
+    gumus: 0,
   });
 
   useEffect(() => {
@@ -26,69 +26,74 @@ export default function CurrencyCards() {
 
   return (
     <div className="grid grid-cols-3 gap-3 mt-4">
-      {/* DOLAR */}
+      {/* USD */}
       <div className="bg-white rounded-2xl p-4 shadow">
         <div className="flex items-center gap-2 mb-2">
           <div className="bg-green-500 p-2 rounded-full text-white">
             <DollarSign size={16} />
           </div>
 
-          <div className="text-sm font-semibold">
-            DOLAR
+          <div className="text-xs font-semibold">
+            USD
           </div>
         </div>
 
-        <div className="text-2xl font-bold">
-          {data.dolar.toFixed(2)} ₺
+        <div className="text-xl font-bold">
+          {data.dolar.toLocaleString("tr-TR", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })} ₺
         </div>
 
-        <div className="text-green-600 text-sm mt-1">
+        <div className="text-green-600 text-xs mt-1">
           ● Canlı
         </div>
       </div>
 
-      {/* EURO */}
+      {/* EUR */}
       <div className="bg-white rounded-2xl p-4 shadow">
         <div className="flex items-center gap-2 mb-2">
           <div className="bg-blue-500 p-2 rounded-full text-white">
             <Euro size={16} />
           </div>
 
-          <div className="text-sm font-semibold">
-            EURO
+          <div className="text-xs font-semibold">
+            EUR
           </div>
         </div>
 
-        <div className="text-2xl font-bold">
-          {data.euro.toFixed(2)} ₺
+        <div className="text-xl font-bold">
+          {data.euro.toLocaleString("tr-TR", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })} ₺
         </div>
 
-        <div className="text-green-600 text-sm mt-1">
+        <div className="text-green-600 text-xs mt-1">
           ● Canlı
         </div>
       </div>
 
-      {/* ONS */}
+      {/* GÜMÜŞ */}
       <div className="bg-white rounded-2xl p-4 shadow">
         <div className="flex items-center gap-2 mb-2">
           <div className="bg-yellow-500 p-2 rounded-full text-white">
             <Coins size={16} />
           </div>
 
-          <div className="text-sm font-semibold">
-            ONS
+          <div className="text-xs font-semibold">
+            GÜMÜŞ
           </div>
         </div>
 
-        <div className="text-xs text-gray-500 mb-1">
-          XAU/USD
+        <div className="text-xl font-bold">
+          {data.gumus.toLocaleString("tr-TR", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })} ₺
         </div>
 
-        <div className="text-lg font-bold">
-          {data.ons.toFixed(2)} $
-        </div>
-
-        <div className="text-green-600 text-sm mt-1">
+        <div className="text-green-600 text-xs mt-1">
           ● Canlı
         </div>
       </div>
