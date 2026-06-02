@@ -3,8 +3,8 @@ import { supabase } from "@/lib/supabase";
 export async function GET() {
   try {
     const response = await fetch(
-      "http://localhost:3000/api/prices"
-    );
+  "https://resat-red.vercel.app/api/prices"
+);
 
     const data = await response.json();
 
