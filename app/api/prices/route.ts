@@ -1,19 +1,37 @@
 export async function GET() {
-  try {
-    const response = await fetch(
-      "https://api.genelpara.com/json/?list=altin&sembol=GA,C,Y,T,ATA,RA,CMR,22,14,GAG"
-    );
+  return Response.json({
+    resat: 28500,
+    resatDegisim: 0.5,
 
-    const text = await response.text();
+    gramAltin: 4350,
+    gramDegisim: 0.3,
 
-    return Response.json({
-      status: response.status,
-      text: text.substring(0, 2000),
-    });
-  } catch (error: any) {
-    return Response.json({
-      success: false,
-      error: error.message,
-    });
-  }
+    ceyrek: 7100,
+    ceyrekDegisim: 0.2,
+
+    yarim: 14200,
+    yarimDegisim: 0.2,
+
+    tam: 28400,
+    tamDegisim: 0.2,
+
+    ata: 29000,
+    ataDegisim: 0.1,
+
+    cumhuriyet: 28800,
+    cumhuriyetDegisim: 0.1,
+
+    ayar22: 3980,
+    ayar22Degisim: 0.1,
+
+    ayar14: 2450,
+    ayar14Degisim: 0.1,
+
+    gumus: 48,
+    gumusDegisim: 0.1,
+
+    dolar: 39.5,
+    euro: 45.2,
+    ons: 3370
+  });
 }
