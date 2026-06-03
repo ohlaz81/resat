@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Newspaper } from "lucide-react";
+import { decode } from "html-entities";
 
 export default function NewsList() {
   const [news, setNews] = useState<any[]>([]);
@@ -14,7 +15,7 @@ export default function NewsList() {
   }, []);
 
   return (
-    <div className="mt-10">
+    <section className="mt-10">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <h2 className="text-3xl font-bold">
@@ -38,7 +39,7 @@ export default function NewsList() {
           </div>
         ) : (
           news.map((item, index) => (
-            <div
+            <article
               key={index}
               className="bg-white rounded-3xl p-5 shadow border-l-4 border-amber-500 hover:shadow-lg transition cursor-pointer"
             >
@@ -51,9 +52,9 @@ export default function NewsList() {
                 </div>
 
                 <div className="flex-1">
-                  <div className="font-semibold text-base leading-6">
-                    {item.title}
-                  </div>
+                  <h3 className="font-semibold text-base leading-6">
+                    {decode(item.title)}
+                  </h3>
 
                   <div className="flex items-center gap-2 mt-2 text-xs text-gray-500">
                     <span>Ekonomim</span>
@@ -66,10 +67,10 @@ export default function NewsList() {
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
           ))
         )}
       </div>
-    </div>
+    </section>
   );
 }
