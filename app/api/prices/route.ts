@@ -10,6 +10,8 @@ export async function GET() {
     const json = await response.json();
 
     return Response.json({
+      remaining: Number(json.remaining ?? 0),
+
       resat: Number(json.data.RA.satis),
       resatDegisim: Number(json.data.RA.degisim),
 
