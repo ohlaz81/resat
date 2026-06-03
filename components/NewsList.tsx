@@ -38,11 +38,14 @@ export default function NewsList() {
             Haberler yükleniyor...
           </div>
         ) : (
-          news.map((item, index) => (
-            <article
-              key={index}
-              className="bg-white rounded-3xl p-5 shadow border-l-4 border-amber-500 hover:shadow-lg transition cursor-pointer"
-            >
+  news.map((item, index) => (
+    <a
+      key={index}
+      href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block bg-white rounded-3xl p-5 shadow border-l-4 border-amber-500 hover:shadow-lg transition cursor-pointer"
+    >
               <div className="flex gap-3">
                 <div className="bg-amber-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
                   <Newspaper
@@ -67,7 +70,7 @@ export default function NewsList() {
                   </div>
                 </div>
               </div>
-            </article>
+            </a>
           ))
         )}
       </div>
