@@ -2,9 +2,9 @@ import Header from "../components/Header";
 import GoldCard from "../components/GoldCard";
 import CurrencyCards from "../components/CurrencyCards";
 import GoldList from "../components/GoldList";
-import BottomNav from "../components/BottomNav";
 import NewsList from "../components/NewsList";
 import Footer from "@/components/Footer";
+import BottomNav from "../components/BottomNav";
 
 export default function Home() {
   return (
@@ -14,9 +14,9 @@ export default function Home() {
         <GoldCard />
         <CurrencyCards />
         <GoldList />
-        <BottomNav />
         <NewsList />
-        <Footer />
+       <Footer />
+       <BottomNav />
       </div>
     </main>
   );
