@@ -4,6 +4,7 @@ import CurrencyCards from "../components/CurrencyCards";
 import GoldList from "../components/GoldList";
 import BottomNav from "../components/BottomNav";
 import NewsList from "../components/NewsList";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <GoldList />
         <BottomNav />
         <NewsList />
+        <Footer />
       </div>
     </main>
   );
