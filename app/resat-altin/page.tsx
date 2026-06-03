@@ -21,12 +21,56 @@ export const metadata: Metadata = {
     "reşat altını",
   ],
 };
-
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Reşat Altın ne kadar?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Güncel Reşat Altın fiyatı sayfa üzerindeki canlı fiyat kartında gösterilmektedir.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Reşat Altın yatırım için uygun mu?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Reşat Altın uzun vadeli yatırımcılar tarafından tercih edilen altın türlerinden biridir.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Reşat Altın ile Cumhuriyet Altını aynı mı?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Hayır. Reşat Altın ve Cumhuriyet Altını farklı altın türleridir.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Reşat Altın fiyatı neden değişir?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ons altın fiyatı, dolar kuru ve piyasa koşulları fiyatı etkiler.",
+      },
+    },
+  ],
+};
 export default function ResatAltinPage() {
-  return (
-    <main className="min-h-screen bg-gray-100 pb-24">
-      <div className="max-w-md md:max-w-3xl lg:max-w-6xl mx-auto p-4">
+ return (
+  <main className="min-h-screen bg-gray-100 pb-24">
 
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(faqSchema),
+      }}
+    />
+
+    <div className="max-w-md md:max-w-3xl lg:max-w-6xl mx-auto p-4">
         <Header />
 
         <div className="mt-4">
@@ -98,14 +142,16 @@ export default function ResatAltinPage() {
           </p>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">
-            Reşat Altın Kaç Gramdır?
-          </h2>
+  Reşat Altın Kaç Gramdır ve Kaç Ayardır?
+</h2>
 
-          <p className="text-gray-700 leading-8">
-            Reşat Altın, Osmanlı döneminden günümüze ulaşan değerli
-            altın türlerinden biridir. Gramaj ve saflık oranları,
-            fiyat oluşumunda önemli rol oynamaktadır.
-          </p>
+<p className="text-gray-700 leading-8">
+  Reşat Altın yaklaşık 7.2 gram ağırlığındadır. Osmanlı Sultanı
+  Mehmet Reşat döneminde basılan bu değerli altın türü günümüzde
+  yatırımcılar tarafından yoğun olarak tercih edilmektedir.
+  Gramajı, saflık oranı ve tarihi değeri nedeniyle altın
+  yatırımcılarının yakından takip ettiği ürünlerden biridir.
+</p>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">
             Reşat Altın ile Cumhuriyet Altını Arasındaki Farklar
