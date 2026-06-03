@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://resatnet.vercel.app"),
+  metadataBase: new URL("https://resat.net"),
 
   title: {
     default: "RESAT.NET | Canlı Altın ve Döviz Fiyatları",
