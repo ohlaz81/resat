@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Canlı Gram Altın, Çeyrek Altın, Yarım Altın, Tam Altın, Reşat Altın, Resat Altın, Cumhuriyet Altını, Ons Altın ve döviz kurlarını takip edin. Grafikler, fiyat alarm sistemi ve güncel piyasa verileri RESAT.NET'te.",
+    "Canlı Gram Altın, Çeyrek Altın, Yarım Altın, Tam Altın, Reşat Altın, Cumhuriyet Altını, Ons Altın ve döviz kurlarını takip edin. Grafikler, fiyat alarm sistemi ve güncel piyasa verileri RESAT.NET'te.",
 
   keywords: [
     "altın fiyatları",
@@ -36,11 +36,8 @@ export const metadata: Metadata = {
     "ons altın",
     "altın alarmı",
     "altın grafikleri",
-    "döviz",
     "dolar",
     "euro",
-    "usd",
-    "eur",
     "canlı döviz",
     "gümüş fiyatları",
     "resat.net",
@@ -51,6 +48,12 @@ export const metadata: Metadata = {
   publisher: "RESAT.NET",
   authors: [{ name: "RESAT.NET" }],
   category: "Finance",
+
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 
   verification: {
     google: "1O86xNx1iKqbbakXJAeNkKj9qxPsFg5i0Mk4AUUenD8",
@@ -69,14 +72,14 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://resatnet.vercel.app",
+    canonical: "https://resat.net",
   },
 
   openGraph: {
     title: "RESAT.NET | Canlı Altın ve Döviz Fiyatları",
     description:
       "Canlı altın fiyatları, döviz kurları, grafikler ve fiyat alarm sistemi.",
-    url: "https://resatnet.vercel.app",
+    url: "https://resat.net",
     siteName: "RESAT.NET",
     locale: "tr_TR",
     type: "website",
