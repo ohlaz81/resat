@@ -1,37 +1,55 @@
 export async function GET() {
-  return Response.json({
-    resat: 28500,
-    resatDegisim: 0.5,
+  try {
+    const response = await fetch(
+      "https://resat.net/api/prices.php",
+      {
+        cache: "no-store",
+      }
+    );
 
-    gramAltin: 4350,
-    gramDegisim: 0.3,
+    const json = await response.json();
 
-    ceyrek: 7100,
-    ceyrekDegisim: 0.2,
+    return Response.json({
+      resat: Number(json.data.RA.satis),
+      resatDegisim: Number(json.data.RA.degisim),
 
-    yarim: 14200,
-    yarimDegisim: 0.2,
+      gramAltin: Number(json.data.GA.satis),
+      gramDegisim: Number(json.data.GA.degisim),
 
-    tam: 28400,
-    tamDegisim: 0.2,
+      ceyrek: Number(json.data.C.satis),
+      ceyrekDegisim: Number(json.data.C.degisim),
 
-    ata: 29000,
-    ataDegisim: 0.1,
+      yarim: Number(json.data.Y.satis),
+      yarimDegisim: Number(json.data.Y.degisim),
 
-    cumhuriyet: 28800,
-    cumhuriyetDegisim: 0.1,
+      tam: Number(json.data.T.satis),
+      tamDegisim: Number(json.data.T.degisim),
 
-    ayar22: 3980,
-    ayar22Degisim: 0.1,
+      ata: Number(json.data.ATA.satis),
+      ataDegisim: Number(json.data.ATA.degisim),
 
-    ayar14: 2450,
-    ayar14Degisim: 0.1,
+      cumhuriyet: Number(json.data.CMR.satis),
+      cumhuriyetDegisim: Number(json.data.CMR.degisim),
 
-    gumus: 48,
-    gumusDegisim: 0.1,
+      ayar22: Number(json.data["22"].satis),
+      ayar22Degisim: Number(json.data["22"].degisim),
 
-    dolar: 39.5,
-    euro: 45.2,
-    ons: 3370
-  });
+      ayar14: Number(json.data["14"].satis),
+      ayar14Degisim: Number(json.data["14"].degisim),
+
+      gumus: Number(json.data.GAG.satis),
+      gumusDegisim: Number(json.data.GAG.degisim),
+
+      dolar: 39.5,
+      euro: 45.2,
+      ons: 3370,
+    });
+  } catch (error) {
+    return Response.json(
+      {
+        error: "Veri alınamadı",
+      },
+      { status: 500 }
+    );
+  }
 }
