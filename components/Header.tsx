@@ -17,7 +17,7 @@ export default function Header() {
         <div className="flex gap-3">
           <a
             href="/"
-            className="px-5 py-3 rounded-xl bg-yellow-500 text-white font-medium shadow"
+            className="px-5 py-3 rounded-xl bg-yellow-500 text-white font-medium shadow hover:bg-yellow-600 transition"
           >
             🏠 Ana Sayfa
           </a>
@@ -30,7 +30,7 @@ export default function Header() {
           </a>
 
           <a
-            href="/alarm"
+            href="/fiyat-alarmi"
             className="px-5 py-3 rounded-xl hover:bg-yellow-500 hover:text-white transition"
           >
             🔔 Alarm Sistemi
@@ -44,16 +44,12 @@ export default function Header() {
           </a>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center">
           <input
             type="text"
-            placeholder="Ara..."
-            className="px-4 py-2 border rounded-xl w-64"
+            placeholder="Altın, Döviz, Gümüş Ara..."
+            className="px-4 py-2 border rounded-xl w-80 focus:outline-none focus:ring-2 focus:ring-yellow-500"
           />
-
-          <button className="px-4 py-2 border rounded-xl hover:bg-gray-100">
-            Giriş Yap
-          </button>
         </div>
       </div>
     </header>
