@@ -15,6 +15,7 @@ export default function Header() {
       {/* Desktop Navbar */}
       <div className="hidden md:flex justify-center">
         <div className="flex gap-4 bg-white rounded-2xl shadow-md px-6 py-4">
+          
           <a
             href="/"
             className="px-6 py-3 rounded-xl bg-yellow-500 text-white font-medium shadow hover:bg-yellow-600 transition"
@@ -22,12 +23,20 @@ export default function Header() {
             🏠 Ana Sayfa
           </a>
 
+          <div
+            className="px-6 py-3 rounded-xl text-gray-500 cursor-default select-none"
+            title="Yakında"
+          >
+            📈 Grafikler
+          </div>
+
           <a
             href="/fiyat-alarmi"
             className="px-6 py-3 rounded-xl hover:bg-yellow-500 hover:text-white transition"
           >
             🔔 Alarm Sistemi
           </a>
+
         </div>
       </div>
     </header>
