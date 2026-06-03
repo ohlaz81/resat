@@ -32,18 +32,22 @@ export default function Footer() {
         </div>
 
         <div className="border-t pt-4 text-center">
-          <div className="font-bold text-lg">
-            Resat.net
-          </div>
+  <div className="font-bold text-lg">
+    Resat.net
+  </div>
 
-          <p className="text-gray-500 text-sm mt-2">
-            Güncel altın fiyatları, grafikler, fiyat alarmı ve piyasa haberleri.
-          </p>
+  <p className="text-yellow-600 text-sm font-medium mt-1">
+    Güncel • Güvenilir • Hızlı
+  </p>
 
-          <p className="text-gray-400 text-xs mt-4">
-            © 2025 Resat.net - Tüm hakları saklıdır.
-          </p>
-        </div>
+  <p className="text-gray-500 text-sm mt-2">
+    Güncel altın fiyatları, grafikler, fiyat alarmı ve piyasa haberleri.
+  </p>
+
+  <p className="text-gray-400 text-xs mt-4">
+    © 2025 Resat.net - Tüm hakları saklıdır.
+  </p>
+</div>
 
       </div>
     </footer>
