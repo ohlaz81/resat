@@ -38,12 +38,12 @@ export default function CurrencyCards() {
           </div>
         </div>
 
-        <div className="text-xl font-bold">
-          {data.dolar.toLocaleString("tr-TR", {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-          })} ₺
-        </div>
+       <div className="text-xl font-bold">
+  {(data?.dolar ?? 0).toLocaleString("tr-TR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })} ₺
+</div>
 
         <div className="text-green-600 text-xs mt-1">
           ● Canlı
@@ -87,10 +87,10 @@ export default function CurrencyCards() {
         </div>
 
         <div className="text-xl font-bold">
-          {data.gumus.toLocaleString("tr-TR", {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-          })} ₺
+          {(data?.gumus ?? 0).toLocaleString("tr-TR", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+})} ₺
         </div>
 
         <div className="text-green-600 text-xs mt-1">

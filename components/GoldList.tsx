@@ -35,12 +35,17 @@ export default function GoldList() {
   gumus: 0,
   gumusDegisim: 0,
 });
-  useEffect(() => {
-    const loadPrices = () => {
-      fetch("/api/prices")
-        .then((res) => res.json())
-        .then((json) => setData(json));
-    };
+ useEffect(() => {
+  const loadPrices = () => {
+    fetch("/api/prices")
+      .then((res) => res.json())
+      .then((json) =>
+        setData((prev) => ({
+          ...prev,
+          ...json,
+        }))
+      );
+  };
 
     loadPrices();
 
