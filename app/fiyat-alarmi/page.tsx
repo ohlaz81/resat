@@ -6,7 +6,7 @@ import { supabase } from "../../lib/supabase";
 
 export default function FiyatAlarmiPage() {
   const [email, setEmail] = useState("");
-  const [symbol, setSymbol] = useState("Gram Altın");
+  const [symbol, setSymbol] = useState("Reşat Altın");
   const [targetPrice, setTargetPrice] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -92,6 +92,7 @@ export default function FiyatAlarmiPage() {
             onChange={(e) => setSymbol(e.target.value)}
             className="w-full border rounded-2xl p-3 mb-4 outline-none focus:ring-2 focus:ring-yellow-400"
           >
+            <option>Reşat Altın</option>
             <option>Gram Altın</option>
             <option>Çeyrek Altın</option>
             <option>Yarım Altın</option>
