@@ -51,13 +51,13 @@ export default function GoldList() {
 
   const goldData = [
   {
-    icon: "gold",
-    name: "Reşat Altın",
-    buy: (data.resat - 1000).toLocaleString("tr-TR"),
-    sell: data.resat.toLocaleString("tr-TR"),
-    trend: data.resatDegisim >= 0 ? "up" : "down",
-    degisim: Math.abs(data.resatDegisim).toFixed(2),
-  },
+  icon: "gold",
+  name: "Gram Altın (24 Ayar)",
+  buy: (data.gramAltin - 20).toLocaleString("tr-TR"),
+  sell: data.gramAltin.toLocaleString("tr-TR"),
+  trend: data.gramDegisim >= 0 ? "up" : "down",
+  degisim: Math.abs(data.gramDegisim).toFixed(2),
+},
   {
     icon: "gold",
     name: "22 Ayar",
@@ -65,14 +65,6 @@ export default function GoldList() {
     sell: data.ayar22.toLocaleString("tr-TR"),
     trend: data.ayar22Degisim >= 0 ? "up" : "down",
     degisim: Math.abs(data.ayar22Degisim).toFixed(2),
-  },
-  {
-    icon: "gold",
-    name: "Gram Altın",
-    buy: (data.gramAltin - 20).toLocaleString("tr-TR"),
-    sell: data.gramAltin.toLocaleString("tr-TR"),
-    trend: data.gramDegisim >= 0 ? "up" : "down",
-    degisim: Math.abs(data.gramDegisim).toFixed(2),
   },
   {
     icon: "gold",
