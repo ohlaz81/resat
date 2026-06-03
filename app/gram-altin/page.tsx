@@ -20,7 +20,10 @@ export default function GramAltinPage() {
         <Header />
 
         <div className="mt-4">
-          <GoldCard />
+          <GoldCard
+  type="gramAltin"
+  title="GRAM ALTIN"
+/>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mt-6">

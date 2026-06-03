@@ -2,44 +2,48 @@
 
 import { useEffect, useState } from "react";
 
-export default function GoldCard() {
-  const [data, setData] = useState({
-    resat: 0,
-    alis: 0,
-  });
+type GoldCardProps = {
+  type?: string;
+  title?: string;
+};
+
+export default function GoldCard({
+  type = "resat",
+  title = "REŞAT ALTIN",
+}: GoldCardProps) {
+  const [price, setPrice] = useState(0);
+  const [alis, setAlis] = useState(0);
 
   useEffect(() => {
     fetch("/api/prices")
       .then((res) => res.json())
-      .then((json) =>
-        setData({
-          resat: Number(json.resat || 0),
-          alis: Number(json.resat - 1000 || 0),
-        })
-      )
+      .then((json) => {
+        const currentPrice = Number(json[type] || 0);
+
+        setPrice(currentPrice);
+        setAlis(currentPrice);
+      })
       .catch(() => {
-        setData({
-          resat: 0,
-          alis: 0,
-        });
+        setPrice(0);
+        setAlis(0);
       });
-  }, []);
+  }, [type]);
 
   return (
     <div className="bg-white rounded-3xl shadow p-6 mt-6">
       <div className="flex justify-between items-center">
         <h2 className="font-bold text-xl">
-          REŞAT ALTIN
+          {title}
         </h2>
 
         <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">
-          Ata Çeyrekli
+          Canlı Fiyat
         </span>
       </div>
 
       <div className="mt-4">
         <div className="text-5xl font-bold">
-          {(data.resat ?? 0).toLocaleString("tr-TR", {
+          {price.toLocaleString("tr-TR", {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
           })} ₺
@@ -73,7 +77,7 @@ export default function GoldCard() {
             </div>
 
             <div className="font-bold text-lg">
-              {(data.alis ?? 0).toLocaleString("tr-TR", {
+              {alis.toLocaleString("tr-TR", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })} ₺
@@ -86,7 +90,7 @@ export default function GoldCard() {
             </div>
 
             <div className="font-bold text-lg text-green-600">
-              {(data.resat ?? 0).toLocaleString("tr-TR", {
+              {price.toLocaleString("tr-TR", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })} ₺

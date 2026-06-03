@@ -32,7 +32,10 @@ export default function YarimAltinPage() {
         <Header />
 
         <div className="mt-4">
-          <GoldCard />
+          <GoldCard
+  type="yarim"
+  title="YARIM ALTIN"
+/>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mt-6">

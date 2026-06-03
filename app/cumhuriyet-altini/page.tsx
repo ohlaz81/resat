@@ -33,7 +33,10 @@ export default function CumhuriyetAltiniPage() {
         <Header />
 
         <div className="mt-4">
-          <GoldCard />
+          <GoldCard
+  type="cumhuriyet"
+  title="CUMHURİYET ALTINI"
+/>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mt-6">

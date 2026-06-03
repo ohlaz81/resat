@@ -32,7 +32,10 @@ export default function TamAltinPage() {
         <Header />
 
         <div className="mt-4">
-          <GoldCard />
+          <GoldCard
+  type="tam"
+  title="TAM ALTIN"
+/>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mt-6">
