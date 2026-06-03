@@ -115,6 +115,14 @@ export default function GoldList() {
     degisim: Math.abs(data.ayar14Degisim).toFixed(2),
   },
   {
+  icon: "gold",
+  name: "Reşat Altın",
+  buy: (data.resat - 1000).toLocaleString("tr-TR"),
+  sell: data.resat.toLocaleString("tr-TR"),
+  trend: data.resatDegisim >= 0 ? "up" : "down",
+  degisim: Math.abs(data.resatDegisim).toFixed(2),
+},
+  {
     icon: "silver",
     name: "Gümüş Gram",
     buy: (data.gumus - 1).toLocaleString("tr-TR"),
