@@ -13,43 +13,21 @@ export default function Header() {
       </div>
 
       {/* Desktop Navbar */}
-      <div className="hidden md:flex justify-between items-center bg-white rounded-2xl shadow-md px-6 py-4 max-w-7xl mx-auto">
-        <div className="flex gap-3">
+      <div className="hidden md:flex justify-center">
+        <div className="flex gap-4 bg-white rounded-2xl shadow-md px-6 py-4">
           <a
             href="/"
-            className="px-5 py-3 rounded-xl bg-yellow-500 text-white font-medium shadow hover:bg-yellow-600 transition"
+            className="px-6 py-3 rounded-xl bg-yellow-500 text-white font-medium shadow hover:bg-yellow-600 transition"
           >
             🏠 Ana Sayfa
           </a>
 
           <a
-            href="/grafikler"
-            className="px-5 py-3 rounded-xl hover:bg-yellow-500 hover:text-white transition"
-          >
-            📈 Grafikler
-          </a>
-
-          <a
             href="/fiyat-alarmi"
-            className="px-5 py-3 rounded-xl hover:bg-yellow-500 hover:text-white transition"
+            className="px-6 py-3 rounded-xl hover:bg-yellow-500 hover:text-white transition"
           >
             🔔 Alarm Sistemi
           </a>
-
-          <a
-            href="/favoriler"
-            className="px-5 py-3 rounded-xl hover:bg-yellow-500 hover:text-white transition"
-          >
-            ⭐ Favoriler
-          </a>
-        </div>
-
-        <div className="flex items-center">
-          <input
-            type="text"
-            placeholder="Altın, Döviz, Gümüş Ara..."
-            className="px-4 py-2 border rounded-xl w-80 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          />
         </div>
       </div>
     </header>
