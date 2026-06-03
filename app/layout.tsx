@@ -16,57 +16,82 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://resatnet.vercel.app"),
 
   title: {
-    default: "RESAT.NET | Güncel Altın ve Döviz Fiyatları",
+    default: "RESAT.NET | Canlı Altın ve Döviz Fiyatları",
     template: "%s | RESAT.NET",
   },
 
   description:
-    "Canlı altın fiyatları, Reşat Altın, Cumhuriyet Altını, Gram Altın, Çeyrek Altın, Ons Altın, döviz kurları ve değerli metaller. Güncel fiyatlar, grafikler ve fiyat alarm sistemi.",
+    "Canlı Gram Altın, Çeyrek Altın, Yarım Altın, Tam Altın, Reşat Altın, Resat Altın, Cumhuriyet Altını, Ons Altın ve döviz kurlarını takip edin. Grafikler, fiyat alarm sistemi ve güncel piyasa verileri RESAT.NET'te.",
 
   keywords: [
     "altın fiyatları",
     "canlı altın",
-    "reşat altın",
     "gram altın",
     "çeyrek altın",
     "yarım altın",
     "tam altın",
+    "reşat altın",
+    "resat altın",
     "cumhuriyet altını",
     "ons altın",
-    "döviz",
-    "usd",
-    "euro",
-    "gümüş",
     "altın alarmı",
     "altın grafikleri",
+    "döviz",
+    "dolar",
+    "euro",
+    "usd",
+    "eur",
     "canlı döviz",
+    "gümüş fiyatları",
     "resat.net",
   ],
 
-  authors: [{ name: "RESAT.NET" }],
+  applicationName: "RESAT.NET",
   creator: "RESAT.NET",
   publisher: "RESAT.NET",
+  authors: [{ name: "RESAT.NET" }],
+  category: "Finance",
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  alternates: {
+    canonical: "https://resatnet.vercel.app",
   },
 
   openGraph: {
-    title: "RESAT.NET | Güncel Altın ve Döviz Fiyatları",
+    title: "RESAT.NET | Canlı Altın ve Döviz Fiyatları",
     description:
-      "Canlı altın, döviz ve değerli metal fiyatlarını takip edin. Grafikler ve fiyat alarm sistemi ile anlık bildirim alın.",
+      "Canlı altın fiyatları, döviz kurları, grafikler ve fiyat alarm sistemi.",
     url: "https://resatnet.vercel.app",
     siteName: "RESAT.NET",
     locale: "tr_TR",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "RESAT.NET",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "RESAT.NET",
+    title: "RESAT.NET | Canlı Altın ve Döviz Fiyatları",
     description:
-      "Canlı altın ve döviz fiyatları, grafikler ve fiyat alarm sistemi.",
+      "Canlı altın fiyatları, döviz kurları, grafikler ve fiyat alarm sistemi.",
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -80,7 +105,9 @@ export default function RootLayout({
       lang="tr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }
