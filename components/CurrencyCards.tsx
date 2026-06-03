@@ -12,10 +12,15 @@ export default function CurrencyCards() {
 
   useEffect(() => {
     const loadPrices = () => {
-      fetch("/api/prices")
-        .then((res) => res.json())
-        .then((json) => setData(json));
-    };
+  fetch("/api/prices")
+    .then((res) => res.json())
+    .then((json) =>
+      setData((prev) => ({
+        ...prev,
+        ...json,
+      }))
+    );
+};
 
     loadPrices();
 
@@ -63,11 +68,11 @@ export default function CurrencyCards() {
         </div>
 
         <div className="text-xl font-bold">
-          {data.euro.toLocaleString("tr-TR", {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-          })} ₺
-        </div>
+  {(data?.euro ?? 0).toLocaleString("tr-TR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })} ₺
+</div>
 
         <div className="text-green-600 text-xs mt-1">
           ● Canlı
