@@ -43,8 +43,9 @@ export default function FiyatAlarmiPage() {
   ]);
 
       if (error) {
-        throw error;
-      }
+  console.log("SUPABASE HATASI:", error);
+  throw error;
+}
 
       setMessage("✅ Alarm başarıyla oluşturuldu.");
       setEmail("");
