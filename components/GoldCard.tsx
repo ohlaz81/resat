@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function GoldCard() {
   const [data, setData] = useState({
-    gramAltin: 0,
+    resat: 0,
     alis: 0,
   });
 
@@ -13,13 +13,13 @@ export default function GoldCard() {
       .then((res) => res.json())
       .then((json) =>
         setData({
-          gramAltin: Number(json.gramAltin || 0),
-          alis: Number(json.alis || json.gramAltin || 0),
+          resat: Number(json.resat || 0),
+          alis: Number(json.resat - 1000 || 0),
         })
       )
       .catch(() => {
         setData({
-          gramAltin: 0,
+          resat: 0,
           alis: 0,
         });
       });
@@ -29,17 +29,17 @@ export default function GoldCard() {
     <div className="bg-white rounded-3xl shadow p-6 mt-6">
       <div className="flex justify-between items-center">
         <h2 className="font-bold text-xl">
-          GRAM ALTIN
+          REŞAT ALTIN
         </h2>
 
         <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">
-          24 Ayar
+          Ata Çeyrekli
         </span>
       </div>
 
       <div className="mt-4">
         <div className="text-5xl font-bold">
-          {(data.gramAltin ?? 0).toLocaleString("tr-TR", {
+          {(data.resat ?? 0).toLocaleString("tr-TR", {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
           })} ₺
@@ -86,7 +86,7 @@ export default function GoldCard() {
             </div>
 
             <div className="font-bold text-lg text-green-600">
-              {(data.gramAltin ?? 0).toLocaleString("tr-TR", {
+              {(data.resat ?? 0).toLocaleString("tr-TR", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })} ₺
