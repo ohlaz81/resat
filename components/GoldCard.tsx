@@ -11,7 +11,18 @@ export default function GoldCard() {
   useEffect(() => {
     fetch("/api/prices")
       .then((res) => res.json())
-      .then((json) => setData(json));
+      .then((json) =>
+        setData({
+          gramAltin: Number(json.gramAltin || 0),
+          alis: Number(json.alis || json.gramAltin || 0),
+        })
+      )
+      .catch(() => {
+        setData({
+          gramAltin: 0,
+          alis: 0,
+        });
+      });
   }, []);
 
   return (
@@ -28,7 +39,7 @@ export default function GoldCard() {
 
       <div className="mt-4">
         <div className="text-5xl font-bold">
-          {data.gramAltin.toLocaleString("tr-TR", {
+          {(data.gramAltin ?? 0).toLocaleString("tr-TR", {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
           })} ₺
@@ -62,7 +73,7 @@ export default function GoldCard() {
             </div>
 
             <div className="font-bold text-lg">
-              {data.alis.toLocaleString("tr-TR", {
+              {(data.alis ?? 0).toLocaleString("tr-TR", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })} ₺
@@ -75,7 +86,7 @@ export default function GoldCard() {
             </div>
 
             <div className="font-bold text-lg text-green-600">
-              {data.gramAltin.toLocaleString("tr-TR", {
+              {(data.gramAltin ?? 0).toLocaleString("tr-TR", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })} ₺
