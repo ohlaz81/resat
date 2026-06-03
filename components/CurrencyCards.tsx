@@ -25,7 +25,7 @@ export default function CurrencyCards() {
   }, []);
 
   return (
-    <div className="grid grid-cols-3 gap-3 mt-4">
+    <div className="grid grid-cols-3 lg:grid-cols-1 gap-3 mt-4">
       {/* USD */}
       <div className="bg-white rounded-2xl p-4 shadow">
         <div className="flex items-center gap-2 mb-2">
