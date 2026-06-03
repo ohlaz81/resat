@@ -6,14 +6,13 @@ import {
   Home,
   BarChart3,
   Bell,
-  Settings,
 } from "lucide-react";
 
 export default function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg z-50 md:hidden">
       <div className="max-w-md mx-auto flex justify-around py-3">
 
         <Link
@@ -30,19 +29,12 @@ export default function BottomNav() {
           </span>
         </Link>
 
-        <Link
-          href="/grafikler"
-          className={`flex flex-col items-center ${
-            pathname === "/grafikler"
-              ? "text-yellow-600"
-              : "text-gray-500"
-          }`}
-        >
+        <div className="flex flex-col items-center text-gray-400 cursor-not-allowed">
           <BarChart3 size={22} />
           <span className="text-xs mt-1">
             Grafikler
           </span>
-        </Link>
+        </div>
 
         <Link
           href="/fiyat-alarmi"
@@ -55,20 +47,6 @@ export default function BottomNav() {
           <Bell size={22} />
           <span className="text-xs mt-1">
             Alarm
-          </span>
-        </Link>
-
-        <Link
-          href="/ayarlar"
-          className={`flex flex-col items-center ${
-            pathname === "/ayarlar"
-              ? "text-yellow-600"
-              : "text-gray-500"
-          }`}
-        >
-          <Settings size={22} />
-          <span className="text-xs mt-1">
-            Ayarlar
           </span>
         </Link>
 
