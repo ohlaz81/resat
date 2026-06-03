@@ -1,5 +1,10 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
+
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import BottomNav from "@/components/BottomNav";
+import GoldCard from "@/components/GoldCard";
 
 export const metadata: Metadata = {
   title: "Reşat Altın Fiyatı Canlı | RESAT.NET",
@@ -9,100 +14,107 @@ export const metadata: Metadata = {
 
 export default function ResatAltinPage() {
   return (
-    <main className="min-h-screen bg-gray-100">
-      <div className="max-w-5xl mx-auto p-6">
+    <main className="min-h-screen bg-gray-100 pb-24">
+      <div className="max-w-md md:max-w-3xl lg:max-w-6xl mx-auto p-4">
 
-        <div className="bg-white rounded-3xl shadow-lg p-8 mb-8">
-          <h1 className="text-4xl font-bold mb-3">
-            Reşat Altın Fiyatı
-          </h1>
+        <Header />
 
-          <p className="text-gray-600 text-lg">
-            Reşat Altın güncel alış satış fiyatlarını canlı olarak takip edin.
-          </p>
+        <div className="mt-4">
+          <GoldCard />
+        </div>
 
-          <div className="mt-8 bg-amber-50 border border-amber-200 rounded-2xl p-6">
-            <div className="text-gray-500 text-sm">
-              Güncel Reşat Altın
-            </div>
+        <div className="grid md:grid-cols-2 gap-6 mt-6">
 
-            <div className="text-5xl font-bold text-amber-600 mt-2">
-              Canlı Veri
-            </div>
+          <div className="bg-white rounded-3xl shadow p-6">
+            <h1 className="text-3xl font-bold mb-4">
+              Reşat Altın Fiyatı
+            </h1>
 
-            <div className="text-sm text-gray-500 mt-2">
-              Ana sayfadaki fiyat verileri ile senkron çalışacaktır.
-            </div>
+            <p className="text-gray-700 leading-8">
+              Reşat Altın güncel fiyatlarını canlı olarak takip edin.
+              Reşat Altın, Osmanlı Sultanı Mehmet Reşat döneminde
+              basılan ve günümüzde yatırım amacıyla tercih edilen
+              değerli altın türlerinden biridir.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl shadow p-6">
+            <h2 className="text-2xl font-bold mb-4">
+              Reşat Altın Fiyatı Nasıl Hesaplanır?
+            </h2>
+
+            <p className="text-gray-700 leading-8">
+              Reşat Altın fiyatı; ons altın fiyatı, dolar kuru,
+              arz-talep dengesi ve kuyumculuk piyasasındaki
+              güncel fiyatlamalara göre değişiklik gösterir.
+            </p>
+          </div>
+
+        </div>
+
+        <div className="bg-white rounded-3xl shadow p-6 mt-6">
+          <h2 className="text-2xl font-bold mb-5">
+            İlgili Altın Fiyatları
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+            <Link
+              href="/gram-altin"
+              className="border rounded-2xl p-4 hover:border-yellow-500 hover:bg-yellow-50 transition"
+            >
+              Gram Altın
+            </Link>
+
+            <Link
+              href="/ceyrek-altin"
+              className="border rounded-2xl p-4 hover:border-yellow-500 hover:bg-yellow-50 transition"
+            >
+              Çeyrek Altın
+            </Link>
+
+            <Link
+              href="/yarim-altin"
+              className="border rounded-2xl p-4 hover:border-yellow-500 hover:bg-yellow-50 transition"
+            >
+              Yarım Altın
+            </Link>
+
+            <Link
+              href="/tam-altin"
+              className="border rounded-2xl p-4 hover:border-yellow-500 hover:bg-yellow-50 transition"
+            >
+              Tam Altın
+            </Link>
+
+            <Link
+              href="/cumhuriyet-altini"
+              className="border rounded-2xl p-4 hover:border-yellow-500 hover:bg-yellow-50 transition"
+            >
+              Cumhuriyet Altını
+            </Link>
+
+            <Link
+              href="/ons-altin"
+              className="border rounded-2xl p-4 hover:border-yellow-500 hover:bg-yellow-50 transition"
+            >
+              Ons Altın
+            </Link>
+
           </div>
 
           <div className="mt-6">
             <Link
               href="/fiyat-alarmi"
-              className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-xl transition"
+              className="inline-block bg-yellow-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-yellow-600 transition"
             >
               🔔 Fiyat Alarmı Oluştur
             </Link>
           </div>
         </div>
 
-        <div className="bg-white rounded-3xl shadow p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-4">
-            Reşat Altın Nedir?
-          </h2>
-
-          <p className="text-gray-700 leading-8">
-            Reşat Altın, Osmanlı Sultanı V. Mehmet Reşat döneminde basılan ve
-            günümüzde yatırım amacıyla tercih edilen değerli altın türlerinden
-            biridir. Türkiye'de yatırımcılar tarafından yoğun şekilde takip
-            edilmektedir.
-          </p>
-        </div>
-
-        <div className="bg-white rounded-3xl shadow p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-4">
-            Reşat Altın Fiyatı Nasıl Hesaplanır?
-          </h2>
-
-          <p className="text-gray-700 leading-8">
-            Reşat Altın fiyatı; ons altın fiyatı, dolar kuru, piyasa arz-talep
-            dengesi ve kuyumculuk sektöründeki güncel fiyatlamalara göre
-            değişiklik göstermektedir.
-          </p>
-        </div>
-
-        <div className="bg-white rounded-3xl shadow p-8">
-          <h2 className="text-2xl font-bold mb-4">
-            İlgili Altın Fiyatları
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-4">
-
-            <Link href="/gram-altin" className="p-4 rounded-xl border hover:border-amber-500">
-              Gram Altın Fiyatı
-            </Link>
-
-            <Link href="/ceyrek-altin" className="p-4 rounded-xl border hover:border-amber-500">
-              Çeyrek Altın Fiyatı
-            </Link>
-
-            <Link href="/yarim-altin" className="p-4 rounded-xl border hover:border-amber-500">
-              Yarım Altın Fiyatı
-            </Link>
-
-            <Link href="/tam-altin" className="p-4 rounded-xl border hover:border-amber-500">
-              Tam Altın Fiyatı
-            </Link>
-
-            <Link href="/cumhuriyet-altini" className="p-4 rounded-xl border hover:border-amber-500">
-              Cumhuriyet Altını Fiyatı
-            </Link>
-
-            <Link href="/ons-altin" className="p-4 rounded-xl border hover:border-amber-500">
-              Ons Altın Fiyatı
-            </Link>
-
-          </div>
-        </div>
+        <Footer />
+        <BottomNav />
 
       </div>
     </main>
