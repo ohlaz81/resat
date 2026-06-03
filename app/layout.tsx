@@ -52,6 +52,10 @@ export const metadata: Metadata = {
   authors: [{ name: "RESAT.NET" }],
   category: "Finance",
 
+  verification: {
+    google: "1O86xNx1iKqbbakXJAeNkKj9qxPsFg5i0Mk4AUUenD8",
+  },
+
   robots: {
     index: true,
     follow: true,
@@ -76,14 +80,6 @@ export const metadata: Metadata = {
     siteName: "RESAT.NET",
     locale: "tr_TR",
     type: "website",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "RESAT.NET",
-      },
-    ],
   },
 
   twitter: {
@@ -91,7 +87,6 @@ export const metadata: Metadata = {
     title: "RESAT.NET | Canlı Altın ve Döviz Fiyatları",
     description:
       "Canlı altın fiyatları, döviz kurları, grafikler ve fiyat alarm sistemi.",
-    images: ["/og-image.jpg"],
   },
 };
 
