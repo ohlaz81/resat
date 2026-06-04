@@ -42,9 +42,9 @@ export async function GET() {
       gumus: Number(json.data.GAG.satis),
       gumusDegisim: Number(json.data.GAG.degisim),
 
-      dolar: 39.5,
-      euro: 45.2,
-      ons: 3370,
+      dolar: Number(json.data.USD.satis),
+euro: Number(json.data.EUR.satis),
+ons: Number(json.data.XAUUSD.satis),
     });
   } catch (error) {
     return Response.json(
