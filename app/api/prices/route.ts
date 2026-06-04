@@ -1,7 +1,7 @@
 export async function GET() {
   try {
     const response = await fetch(
-      "https://resat.net/api/prices.php",
+      "https://duzcerehberi.com/api/prices.php",
       {
         cache: "no-store",
       }
