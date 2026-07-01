@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Header from "../components/Header";
 import GoldCard from "../components/GoldCard";
 import CurrencyCards from "../components/CurrencyCards";
@@ -9,7 +10,7 @@ import Footer from "@/components/Footer";
 const otherSites = [
   {
     name: "Yenidoğan",
-    logo: "/images/yenidogan-logo.png",
+    logo: "/images/yenidogan-logo.jpeg",
     href: "https://yenidogan.net",
   },
   {
@@ -106,10 +107,12 @@ export default function Home() {
                 aria-label={`${site.name} sitesini aç`}
                 className="flex h-24 items-center justify-center rounded-2xl bg-white p-3 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md md:h-28 md:p-5"
               >
-                <img
+                <Image
                   src={site.logo}
                   alt={site.name}
-                  className="h-auto max-h-10 w-auto max-w-full object-contain"
+                  width={180}
+                  height={60}
+                  className="h-10 w-full object-contain"
                 />
               </a>
             ))}
