@@ -9,22 +9,22 @@ import Footer from "@/components/Footer";
 const otherSites = [
   {
     name: "Yenidoğan",
-    icon: "❤️",
+    logo: "/images/yenidogan-logo.png",
     href: "https://yenidogan.net",
   },
   {
     name: "Zurna.TR",
-    icon: "🎺",
+    logo: "/images/zurna-logo.png",
     href: "https://zurna.tr",
   },
   {
     name: "Sanalsohbet",
-    icon: "💬",
+    logo: "/images/sanalsohbet-logo.png",
     href: "https://sanalsohbet.net",
   },
   {
     name: "Fantezi",
-    icon: "💜",
+    logo: "/images/fantezisohbet-logo.png",
     href: "https://fantezisohbet.com",
   },
 ];
@@ -104,17 +104,13 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${site.name} sitesini aç`}
-                className="flex h-24 flex-col items-center justify-center rounded-2xl bg-white p-3 text-gray-900 shadow-sm transition-all md:h-28 md:p-5 md:hover:scale-[1.02] md:hover:shadow-md"
+                className="flex h-24 items-center justify-center rounded-2xl bg-white p-3 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md md:h-28 md:p-5"
               >
-                <span
-                  aria-hidden="true"
-                  className="flex h-10 w-10 items-center justify-center text-3xl"
-                >
-                  {site.icon}
-                </span>
-                <span className="mt-2 text-center text-[11px] font-semibold leading-tight">
-                  {site.name}
-                </span>
+                <img
+                  src={site.logo}
+                  alt={site.name}
+                  className="h-auto max-h-10 w-auto max-w-full object-contain"
+                />
               </a>
             ))}
           </div>
