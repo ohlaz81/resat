@@ -11,21 +11,25 @@ const otherSites = [
   {
     name: "Yenidoğan",
     logo: "/images/yenidogan-logo.jpeg",
+    logoClassName: "w-[68%]",
     href: "https://yenidogan.net",
   },
   {
     name: "Zurna.TR",
     logo: "/images/zurna-logo.png",
+    logoClassName: "w-[75%]",
     href: "https://zurna.tr",
   },
   {
     name: "Sanalsohbet",
     logo: "/images/sanalsohbet-logo.png",
+    logoClassName: "w-[75%]",
     href: "https://sanalsohbet.net",
   },
   {
     name: "Fantezi",
     logo: "/images/fantezisohbet-logo.png",
+    logoClassName: "w-[75%]",
     href: "https://fantezisohbet.com",
   },
 ];
@@ -105,14 +109,15 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${site.name} sitesini aç`}
-                className="flex h-24 items-center justify-center rounded-2xl bg-white p-3 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md md:h-28 md:p-5"
+                className="flex h-28 items-center justify-center rounded-2xl bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
               >
                 <Image
                   src={site.logo}
                   alt={site.name}
-                  width={180}
-                  height={60}
-                  className="h-10 w-full object-contain"
+                  width={220}
+                  height={90}
+                  className={`${site.logoClassName} h-auto object-contain`}
+                  priority={false}
                 />
               </a>
             ))}
